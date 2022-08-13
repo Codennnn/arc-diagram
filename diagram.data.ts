@@ -54,23 +54,25 @@ export const diagramTemplate: Diagram = {
   },
 }
 
+export type IconType = 'database' | 'service' | 'app' | 'stack'
+
 interface Icon {
-  type: NodeType | 'app' | 'stack'
+  type: IconType
   label: string
   value: string
 }
 
 export const iconSet: Icon[] = [
-  { type: NodeType.Database, label: 'MySQL', value: 'mysql' },
-  { type: NodeType.Database, label: 'MongoDB', value: 'mongodb' },
-  { type: NodeType.Database, label: 'PostgreSQL', value: 'postgresql' },
-  { type: NodeType.Database, label: 'GraphQL', value: 'graphql' },
-  { type: NodeType.Database, label: 'Redis', value: 'redis' },
-  { type: NodeType.Database, label: 'SQLite', value: 'sqlite' },
+  { type: 'database', label: 'MySQL', value: 'mysql' },
+  { type: 'database', label: 'MongoDB', value: 'mongodb' },
+  { type: 'database', label: 'PostgreSQL', value: 'postgresql' },
+  { type: 'database', label: 'GraphQL', value: 'graphql' },
+  { type: 'database', label: 'Redis', value: 'redis' },
+  { type: 'database', label: 'SQLite', value: 'sqlite' },
 
-  { type: NodeType.Service, label: 'Nginx', value: 'nginx' },
-  { type: NodeType.Service, label: 'Docker', value: 'docker' },
-  { type: NodeType.Service, label: 'Apache Tomcat', value: 'tomcat' },
+  { type: 'service', label: 'Nginx', value: 'nginx' },
+  { type: 'service', label: 'Docker', value: 'docker' },
+  { type: 'service', label: 'Apache Tomcat', value: 'tomcat' },
 
   { type: 'app', label: 'Go', value: 'go' },
   { type: 'app', label: 'Java', value: 'java' },

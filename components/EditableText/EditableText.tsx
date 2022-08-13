@@ -22,6 +22,7 @@ export default function EditableText(props: EditableTextProps) {
       {editing ? (
         <Input
           autoFocus
+          className="w-full"
           value={props.value}
           onBlur={(e) => {
             onBlur?.(e.target.value)

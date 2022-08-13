@@ -4,10 +4,11 @@ import { type NodeProps } from 'react-flow-renderer'
 
 import IconContainerFrame from '../../../components/icons/IconContainerFrame'
 import type { NodeData } from '../../../diagram.type'
+import NodeLabel from '../kit/NodeLabel'
 import NodeWrapper from '../kit/NodeWrapper'
 
 export default function NodeService(node: NodeProps<NodeData>) {
-  const { label, icon, layout = 'vertical' } = node.data
+  const { icon, layout = 'vertical' } = node.data
 
   return (
     <NodeWrapper {...node}>
@@ -22,7 +23,7 @@ export default function NodeService(node: NodeProps<NodeData>) {
           </IconContainerFrame>
         </div>
 
-        <span>{label}</span>
+        <NodeLabel {...node} />
       </div>
     </NodeWrapper>
   )

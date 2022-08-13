@@ -6,6 +6,7 @@ import { iconSet } from '../../diagram.data'
 import { NodeType } from '../../diagram.enum'
 import useDiagramHelper from '../../diagram.helper'
 import type { NodeData } from '../../diagram.type'
+import IconSelector from './components/IconSelector'
 
 export default function NodeSetting() {
   const { digramData, editingNode, setEditingNode } = useDiagramContext()
@@ -45,12 +46,7 @@ export default function NodeSetting() {
         return (
           <>
             <Form.Item label="图标" name="icon">
-              <Select
-                allowClear
-                options={iconSet
-                  .filter(({ type }) => type === NodeType.Database)
-                  .map(({ label, value }) => ({ label, value }))}
-              />
+              <IconSelector iconType="database" />
             </Form.Item>
             <Form.Item label="布局" name="layout">
               <Select
@@ -71,12 +67,7 @@ export default function NodeSetting() {
         return (
           <>
             <Form.Item label="图标" name="icon">
-              <Select
-                allowClear
-                options={iconSet
-                  .filter(({ type }) => type === NodeType.Service || 'app')
-                  .map(({ label, value }) => ({ label, value }))}
-              />
+              <IconSelector iconType={['service', 'app']} />
             </Form.Item>
             <Form.Item label="布局" name="layout">
               <Select

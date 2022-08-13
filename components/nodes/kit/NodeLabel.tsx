@@ -13,6 +13,7 @@ export default function NodeLabel(nodeProps: NodeLabelProps) {
     <div onClick={(e) => e.stopPropagation()}>
       <EditableText
         value={nodeProps.data.label}
+        wrapperClassName="w-full"
         onChange={(newLabel) => {
           updateNode(nodeProps.id, { label: newLabel })
         }}

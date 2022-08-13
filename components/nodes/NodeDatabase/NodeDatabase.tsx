@@ -3,10 +3,11 @@ import { type NodeProps } from 'react-flow-renderer'
 
 import IconContainerStereo from '../../../components/icons/IconContainerStereo'
 import type { NodeDataDatabase } from '../../../diagram.type'
+import NodeLabel from '../kit/NodeLabel'
 import NodeWrapper from '../kit/NodeWrapper'
 
 export default function NodeDatabase(node: NodeProps<NodeDataDatabase>) {
-  const { label, icon } = node.data
+  const { icon } = node.data
 
   return (
     <NodeWrapper {...node}>
@@ -17,7 +18,7 @@ export default function NodeDatabase(node: NodeProps<NodeDataDatabase>) {
           </IconContainerStereo>
         </div>
 
-        <span>{label}</span>
+        <NodeLabel {...node} />
       </div>
     </NodeWrapper>
   )
